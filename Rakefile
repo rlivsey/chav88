@@ -24,17 +24,6 @@ task :merb_env do
   Merb.start_environment(:environment => init_env, :adapter => 'runner')
 end
 
-<% if testing_framework.to_sym == :rspec %>
-require 'spec/rake/spectask'
-require 'merb-core/test/tasks/spectasks'
-desc 'Default: run spec examples'
-task :default => 'spec'
-<% end %>
-
-<% if testing_framework.to_sym == :test_unit %>
-require 'rake/testtask'
-<% end %>
-
 ##############################################################################
 # ADD YOUR CUSTOM TASKS IN /lib/tasks
 # NAME YOUR RAKE FILES file_name.rake
