@@ -39,3 +39,17 @@ require 'rake/testtask'
 # ADD YOUR CUSTOM TASKS IN /lib/tasks
 # NAME YOUR RAKE FILES file_name.rake
 ##############################################################################
+
+
+begin
+  require 'vlad'
+  Vlad.load :app => nil,
+            :config => 'config/deploy.rb',
+            :core => :core,
+            :scm => :git,
+            :web => :apache
+
+rescue LoadError
+  puts "failed to init vlad"
+end
+
