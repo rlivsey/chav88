@@ -27,9 +27,7 @@ class Chav < Merb::Controller
   def index
     
     c = ChavSpeak.new
-    c.load
-    qa = c.random
-    
+    c.load    
     @question, @answer = c.random
     
     render 
